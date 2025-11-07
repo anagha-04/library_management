@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books List</title>
+
+    <style>
+        /* Body and General Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; /* Very light gray background */
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        /* Heading */
+        h1 {
+            color: #007bff; /* Primary blue color */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ccc;
+            padding-bottom: 10px;
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 800px; /* Limit table width for readability */
+            border-collapse: collapse; /* Removes spaces between borders */
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures borders/shadows look clean */
+        }
+
+        /* Table Header (The top row with Title, Author, Category) */
+        th {
+            background-color: #007bff; /* Blue header background */
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            padding: 12px 15px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Table Data Cells */
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd; /* Light separator line */
+            text-align: left;
+        }
+
+        /* Zebra Striping (Alternating row colors for better readability) */
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Slightly different color for even rows */
+        }
+
+        /* Hover Effect for Rows (Enhances interactivity) */
+        tr:hover {
+            background-color: #e0f0ff; /* Light blue on hover */
+            cursor: pointer;
+        }
+
+        /* Remove border from the last row */
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ALL BOOKS</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+        </tr>
+        {% for books in books_data %}
+        <tr>
+            <td>{{books.title}}</td>
+            <td>{{books.author}}</td>
+            <td>{{books.category}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

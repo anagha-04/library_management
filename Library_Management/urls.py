@@ -18,9 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 from user_app.views import*
+from libraryy.views import*
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',UserRegistrationView.as_view(), name="register"),
     path('login/',LoginView.as_view(),name ="login"),
+    path('add/',Add_books_view.as_view(),name ="add"),
+    path('list/',Book_list_view.as_view(),name ="list"),
+    path('update/<int:pk>',Books_update_view.as_view(),name ="update"),
+    path('delete/<int:pk>',Books_delete_view.as_view(),name ="delete"),
+
 ]
